@@ -1,12 +1,23 @@
+.block {
+    display: flex;
+    justify-content: center;
+    font-family: Arial;
+    align-items: stretch;
+}
+
 header {
+    align-self: flex-start;
     width: 140px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: space-around;
     padding: 10px 20px;
-    box-sizing: border-box;
     border-radius: 3px;
+}
+
+header .logo {
+    align-self: center;
 }
 
 .nav-menu,
@@ -14,7 +25,7 @@ header {
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    width: 140px;
+    align-items: stretch;
 }
 
 .nav-menu a {
@@ -56,6 +67,10 @@ header {
     background-color: white;
 }
 
+.tweeter-info button:hover {
+    background: #D9EFEC;
+}
+
 .tweeter-info img {
     height: 13px;
     width: 16px;
@@ -85,4 +100,98 @@ header {
     font-size: 10px;
     line-height: 19px;
     color: #000;
+}
+
+.main-content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner .background {
+    height: 445px;
+    background: no-repeat url(img/baner.png);
+    background-size: cover;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.banner .background .banner-share::before {
+    margin-bottom: 285px;
+}
+
+.banner .background .banner-share {
+    width: 272px;
+    height: 49px;
+    left: 0px;
+    top: 285px;
+    background: #FFFFFF;
+    font-size: 22px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.banner .background .banner-submit {
+    width: 487px;
+    height: 42px;
+    background: #000000;
+    font-size: 14px;
+    line-height: 14px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    background: #EFF8F7;
+    height: 85px;
+}
+
+.tabs .tab-item {
+    display: flex;
+    padding: 0 20px;
+    width: 225px;
+    height: 100%;
+    flex-direction: column;
+    font-family: Arial;
+    font-weight: normal;
+    justify-content: center;
+    color: #34ACA7;
+}
+
+.tabs .tab-item:hover {
+    background: #D9EFEC;
+}
+
+.tab-item-title {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: normal;
+}
+
+.tab-item-descr {
+    font-style: italic;
+    font-size: 10px;
+    line-height: 19px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.subscribe-form .subscribe-form .mail-logo {
+    width: 32px;
+    height: 26px;
+    background-image: url(/icons/mail-icon.svg);
 }
