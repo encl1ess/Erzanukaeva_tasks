@@ -1,64 +1,77 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .block {
     display: flex;
-    justify-content: center;
+    width: 1100px;
     font-family: Arial;
-    align-items: stretch;
+    align-items: flex-start;
+}
+
+a {
+    text-decoration: none;
+    color: #34ACA7;
 }
 
 header {
-    align-self: flex-start;
-    width: 140px;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: space-around;
-    padding: 10px 20px;
-    border-radius: 3px;
+    width: 140px;
+    justify-content: flex-start;
+    margin-right: 44px;
 }
 
 header .logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
     align-self: center;
+    background-image: url(./icons/icon-logo.svg);
 }
 
-.nav-menu,
-.tweeter-info {
+.header .nav-menu,
+.header .twitter-info {
+    margin-left: auto;
     display: flex;
     flex-direction: column;
-    text-decoration: none;
-    align-items: stretch;
 }
 
-.nav-menu a {
+.nav-menu .nav-menu-item {
     display: flex;
     flex-direction: row;
     text-decoration: none;
-    font-family: Arial;
     font-style: italic;
-    font-weight: normal;
     font-size: 14px;
     line-height: 14px;
     color: #34ACA7;
     margin-bottom: 40px;
 }
 
-.nav-menu a span {
-    margin-left: 16px;
+.nav-menu-icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+}
+
+.nav-menu .nav-menu-item .nav-menu-item-title {
     align-self: center;
 }
 
-.nav-menu a:hover {
+.nav-menu .nav-menu-item:hover {
     background: #D9EFEC;
 }
 
-.tweeter-info button {
+.twitter-info .join-button {
     display: flex;
     align-items: center;
-    width: 140px;
+    width: 100%;
     height: 30px;
     color: #34ACA7;
-    font-family: Arial;
     font-style: italic;
-    font-weight: normal;
     font-size: 10px;
     line-height: 12px;
     border: 1px solid #E5E5E5;
@@ -67,11 +80,19 @@ header .logo {
     background-color: white;
 }
 
-.tweeter-info button:hover {
+.twitter-info .join-button:hover {
     background: #D9EFEC;
 }
 
-.tweeter-info img {
+.join-button .join-button-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background: no-repeat url('icons/twitter-icon-blue.svg');
+}
+
+.twitter-info img {
     height: 13px;
     width: 16px;
     margin-right: 5px;
@@ -93,40 +114,43 @@ header .logo {
     margin-top: 5px;
 }
 
-.friendship p {
-    font-family: Arial;
+.friendship-text {
     font-style: italic;
     font-weight: normal;
     font-size: 10px;
     line-height: 19px;
     color: #000;
+    padding-right: 5px;
 }
 
 .main-content {
-    width: 70%;
+    width: 896px;
+    height: 996px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.banner {
     display: flex;
     flex-direction: column;
 }
 
-.banner .background {
-    height: 445px;
+.banner-img {
+    padding-top: 285px;
+    padding-bottom: 69px;
     background: no-repeat url(img/baner.png);
-    background-size: cover;
-    font-family: Arial;
+    background-size: auto;
     font-style: italic;
-    font-weight: normal;
 }
 
-.banner .background .banner-share::before {
-    margin-bottom: 285px;
-}
-
-.banner .background .banner-share {
-    width: 272px;
+.banner-img-title {
+    width: fit-content;
+    padding: 0 29px;
+    margin: 0;
     height: 49px;
-    left: 0px;
-    top: 285px;
     background: #FFFFFF;
+    font-weight: normal;
     font-size: 22px;
     line-height: 22px;
     display: flex;
@@ -134,33 +158,30 @@ header .logo {
     text-align: center;
 }
 
-.banner .background .banner-submit {
-    width: 487px;
+.banner-img-descr {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0 29px;
     height: 42px;
     background: #000000;
     font-size: 14px;
     line-height: 14px;
     color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    text-align: center;
 }
 
 .tabs {
     display: flex;
+    flex-direction: row;
     background: #EFF8F7;
-    height: 85px;
 }
 
 .tabs .tab-item {
     display: flex;
-    padding: 0 20px;
+    padding: 26px 22px 20px;
     width: 225px;
-    height: 100%;
+    height: fit-content;
     flex-direction: column;
-    font-family: Arial;
-    font-weight: normal;
-    justify-content: center;
     color: #34ACA7;
 }
 
@@ -169,6 +190,7 @@ header .logo {
 }
 
 .tab-item-title {
+    margin: 0;
     font-size: 18px;
     line-height: 18px;
     font-weight: normal;
@@ -180,18 +202,103 @@ header .logo {
     line-height: 19px;
 }
 
-.cards {
+.subscribe-form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px dashed #E5E5E5;
+    border-bottom: 1px dashed #E5E5E5;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    /* or 114% */
+    color: #000000;
 }
 
-.card-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.subscribe-form .subscribe-form .mail-logo {
+.subscribe-form-mail-icon {
+    margin-left: 18px;
+    flex-shrink: 0;
     width: 32px;
     height: 26px;
-    background-image: url(/icons/mail-icon.svg);
+    margin-right: 6px;
+    background: no-repeat url('icons/mail-icon.svg');
+}
+
+.subscribe-form-descr {
+    width: 530px;
+    margin-left: 16px;
+}
+
+.subscribe-form-button {
+    width: 80px;
+    height: 23px;
+    right: 18px;
+    top: 13px;
+    background: linear-gradient(180deg, #F4F3F3 0%, #BBB9B9 100%);
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-size: 10px;
+    line-height: 10px;
+}
+
+.subscribe-form-input {
+    width: 160px;
+    height: 22px;
+    padding-left: 6px;
+    border: 1px solid #E5E5E5;
+    margin-right: 18px;
+    font-size: 10px;
+    line-height: 10px;
+    color: #000000;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.cards .full-card {
+    width: 207px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+}
+
+.cards .full-card a:hover,
+.footer-menu li a:hover {
+    color: #006db6;
+}
+
+.card-image img {
+    outline: 11px solid #FFFFFF;
+    outline-offset: -11px;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.card-image:hover {
+    filter: drop-shadow(0px 1px 3px#34ACA7);
+}
+
+.card-title {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: normal;
+}
+
+.card-footer .card-date {
+    color: #E5E5E5;
+}
+
+.card-footer .card-date::after {
+    content: ' /';
 }

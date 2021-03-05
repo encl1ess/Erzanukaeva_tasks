@@ -11,42 +11,40 @@
 <body>
     <div class="block">
         <header>
-            <div class="logo">
-                <a href="#">
-                    <img src="./icons/icon-logo.svg" alt="icon-logo">
-                </a>
-            </div>
+            <a class="logo" href="#logo"></a>
+
             <nav class="nav-menu">
 
-                <a href="#">
-                    <img src="./icons/food-icon.svg" alt="food-icon">
-                    <span>Tastemakers</span>
+                <a href="#" class="nav-menu-item">
+                    <div class="nav-menu-icon" style="background: center / cover no-repeat url('./icons/food-icon.svg');"></div>
+                    <span class="nav-menu-item-title">Tastemakers</span>
                 </a>
-                <a href="#">
-                    <img src="./icons/blog-icon.svg" alt="blog-icon">
-                    <span>Blog</span>
+                <a href="#" class="nav-menu-item">
+                    <div class="nav-menu-icon" style="background: center / cover no-repeat url('icons/blog-icon.svg');"></div>
+                    <span class="nav-menu-item-title">Blog</span>
                 </a>
-                <a href="#">
-                    <img src="icons/a-list-icon.svg" alt="a-list-icon">
-                    <span>The A-List</span>
+                <a href="#" class="nav-menu-item">
+                    <div class="nav-menu-icon" style="background: center / cover no-repeat url('icons/a-list-icon.svg');"></div>
+                    <span class="nav-menu-item-title">The A-List</span>
                 </a>
-                <a href="#">
-                    <img src="icons/camera-icon.svg" alt="camera-icon">
-                    <span>Contribure</span>
+                <a href="#" class="nav-menu-item">
+                    <div class="nav-menu-icon" style="background: center / cover no-repeat url('icons/camera-icon.svg');"></div>
+                    <span class="nav-menu-item-title">Contribure</span>
                 </a>
-                <a href="#">
-                    <img src="icons/about-icon.svg" alt="about-icon">
-                    <span>About</span>
+                <a href="#" class="nav-menu-item">
+                    <div class="nav-menu-icon" style="background: center / cover no-repeat url('icons/about-icon.svg');"></div>
+                    <span class="nav-menu-item-title">About</span>
                 </a>
+
             </nav>
 
-            <section class="tweeter-info">
+            <section class="twitter-info">
                 <div class="latest-tweet">
                     <div class="tweet-title">LATEST TWEET</div>
                     <button class="join-button">
-                    <img src = "icons/twitter-icon-blue.svg" alt = "twitter-icon-blue">
-                    Join the Conversation
-                </button>
+                        <div class = "join-button-icon"></div>
+                        Join the Conversation
+                    </button>
                 </div>
 
                 <div class="friendship">
@@ -55,17 +53,17 @@
                         For weekly finds, community recomendations, and more, like us on Facebook.
                     </p>
                     <button class="join-button">
-                    <img src = "icons/twitter-icon-blue.svg" alt = "twitter-icon-blue">
-                   Join the Community
+                        <div class = "join-button-icon"></div>
+                        Join the Community
                     </button>
                 </div>
             </section>
         </header>
         <main class="main-content">
             <section class="banner">
-                <div class="background">
-                    <div class="banner-share">Share your Foor Sence</div>
-                    <div class="banner-submit">Submit yout favorite recipes, become a contributor, or get interviewed.</div>
+                <div class="banner-img">
+                    <h3 class="banner-img-title">Share your Foor Sence</h3>
+                    <div class="banner-img-descr">Submit yout favorite recipes, become a contributor, or get interviewed.</div>
                 </div>
                 <div class="tabs">
                     <div class="tab-item">
@@ -76,6 +74,7 @@
                             Feast your eyes & get recipes!
                         </div>
                     </div>
+
                     <div class="tab-item">
                         <h2 class="tab-item-title">
                             Blog
@@ -105,98 +104,106 @@
             </section>
 
             <form class="subscribe-form">
-                <div class="mail-logo"></div>
-                <div class="subscribe-form-descr">
+
+                <div class="subscribe-form-mail-icon"></div>
+                <p class="subscribe-form-descr">
                     Sign up for out newsletter to receive a handpicked selection of the best stories, recipes, and news, delivered weekly to your inbox.
-                </div>
-                <input type="email">
-                <button type="submit">Subscribe</button>
+                </p>
+
+                <input class="subscribe-form-input" type="email" placeholder="Email">
+                <button class="subscribe-form-button" type="submit">Subscribe</button>
 
             </form>
 
             <section class="cards">
-                <article class="card-large">
+                <article class="full-card">
                     <div class="card-header">
-                        <a href="#"> <img src="img/cookbooks.png" alt="cookbooks"> </a>
-                        <a htef="#">
-                    <div class = "card-title>
-                        2012's Best Summer Cookbooks
-                    </div>
-                </a>
+                        <a class="card-image" href="#">
+                            <img src="img/cookbooks.png" alt="cookbooks">
+                        </a>
                     </div>
                     <div class="card-content">
+                        <a href="#card">
+                            <h3 class="card-title">
+                                2012's Best Summer Cookbooks
+                            </h3>
+                        </a>
                         <p class="card-text">
                             With the best of the season coming from “orchards, farms and gardens,” NPR has put together an impressive collection of 10 summer cookbooks.
                         </p>
                     </div>
                     <div class="card-footer">
-                        <span>May 23, 2012</span>/
+                        <span class="card-date">May 23, 2012</span>
                         <a href="#">Read...</a>
                     </div>
                 </article>
-                <article class="card-large">
+                <article class="full-card">
                     <div class="card-header">
-                        <a href="#"> <img src="img/veg_chips.png" alt="vegetable chips"> </a>
-                        <a htef="#">
-                    <div class = "card-title>
-                       How to Make Vegetable Chips
-                    </div>
-                </a>
+                        <a class="card-image" href="#">
+                            <img src="img/veg_chips.png" alt="vegetable chips">
+                        </a>
                     </div>
                     <div class="card-content">
+                        <a href="#card">
+                            <h3 class="card-title">
+                                How to Make Vegetable Chips
+                            </h3>
+                        </a>
                         <p class="card-text">
                             About a month ago, I ate almost an entire box of kale chips. My brother and I were visiting our cousin in Brooklyn, and before a very thoughtfully prepared vagan...
                         </p>
                     </div>
                     <div class="card-footer">
-                        <span>May 17, 2012</span> /
+                        <span class="card-date">May 17, 2012</span>
                         <a href="#">Read...</a>
                     </div>
                 </article>
-                <article class="card-large">
+                <article class="full-card">
                     <div class="card-header">
-                        <a href="#"> <img src="img/cook_pin.png" alt="cookbook on pinterest"> </a>
-                        <a htef="#">
-                    <div class = "card-title>
-                        Join us on Pinterest!
-                    </div>
-                </a>
+                        <a class="card-image" href="#">
+                            <img src="img/cook_pin.png" alt="cookbook on pinterest">
+                        </a>
                     </div>
                     <div class="card-content">
+                        <a href="#card">
+                            <h3 class="card-title">
+                                Join us on Pinterest!
+                            </h3>
+                        </a>
                         <p class="card-text">
                             If I could curate a cookbook for you, this would be it.
                         </p>
                     </div>
                     <div class="card-footer">
-                        <span>May 23, 2012</span> /
+                        <span class="card-date">May 23, 2012</span>
                         <a href="#">Read...</a>
                     </div>
                 </article>
-                <article class="card-large">
+                <article class="full-card">
                     <div class="card-header">
-                        <a href="#"> <img src="img/recipes.png" alt="recipes"> </a>
-                        <a htef="#">
-                    <div class = "card-title>
-                        Recipes from a Sunday Supper
-                    </div>
-                </a>
+                        <a class="card-image" href="#">
+                            <img src="img/recipes.png" alt="recipes">
+                        </a>
                     </div>
                     <div class="card-content">
+                        <a href="#card">
+                            <h3 class="card-title">
+                                Recipes from a Sunday Supper
+                            </h3>
+                        </a>
                         <p class="card-text">
                             I could not figure out what to do with the delectable slices of Pear Cake that I brought home from this wonderful Sunday supper - eat them slowly, a little bit at...
                         </p>
                     </div>
                     <div class="card-footer">
-                        <span>May 17, 2012</span>/
+                        <span class="card-date">May 17, 2012</span>
                         <a href="#">Read...</a>
                     </div>
                 </article>
             </section>
-
-
         </main>
     </div>
-    <footer class="footer-task1">
+    <footer>
 
     </footer>
 </body>
