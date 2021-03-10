@@ -9,6 +9,11 @@ a {
     color: #34ACA7;
 }
 
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
 .small-text {
     font-size: 10px;
     line-height: 10px;
@@ -65,6 +70,26 @@ header .logo {
     margin-right: 12px;
 }
 
+.food {
+    background: center / cover no-repeat url('./icons/food-icon.svg');
+}
+
+.blog {
+    background: center / cover no-repeat url('icons/blog-icon.svg');
+}
+
+.a-list {
+    background: center / cover no-repeat url('icons/a-list-icon.svg');
+}
+
+.camera {
+    background: center / cover no-repeat url('icons/camera-icon.svg');
+}
+
+.about {
+    background: center / cover no-repeat url('icons/about-icon.svg');
+}
+
 .nav-menu-item-title {
     align-self: center;
 }
@@ -104,7 +129,7 @@ header .logo {
     margin-right: 5px;
 }
 
-.latest-tweet {
+tweet {
     width: 140px;
 }
 
@@ -120,7 +145,7 @@ header .logo {
     margin-top: 5px;
 }
 
-.friendship-text {
+.tweet-text {
     font-style: italic;
     font-weight: normal;
     font-size: 10px;
@@ -321,15 +346,13 @@ footer {
 }
 
 .footer-menu {
-    list-style: none;
-    padding-left: 0;
     display: flex;
     flex-direction: row;
     justify-content: start;
     margin-bottom: 5px;
 }
 
-.footer-menu li:not(:last-child) {
+.footer-info .footer-menu li:not(:last-child) {
     border-right: 1px solid #E5E5E5;
     margin-right: 5px;
     padding-right: 5px;
@@ -339,14 +362,7 @@ footer {
     color: #E5E5E5;
 }
 
-.footer-icons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.footer-icons a {
+.footer-icon {
     width: 32px;
     height: 32px;
 }
