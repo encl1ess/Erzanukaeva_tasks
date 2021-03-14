@@ -1,9 +1,4 @@
-/*Task 2.3: Square Every Digit
-Реализовать функцию, принимающая на вход число. Далее получает
-квадрат каждого значения и возвращает результат числом.
- */
-
-
+"use strict";
 let squareEveryDigit = (function() {
 
     return {
