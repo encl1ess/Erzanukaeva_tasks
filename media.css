@@ -1,0 +1,111 @@
+@media only all and (max-width: 1176px) {
+    .main-content {
+        width: 710px;
+    }
+    .tab-item {
+        text-align: center;
+        padding: 1.5% 0;
+    }
+    .tab-item__descr {
+        display: none;
+    }
+}
+
+@media only all and (max-width: 992px) {
+    .block {
+        flex-direction: column;
+        align-items: center;
+        width: 710px;
+    }
+    header {
+        flex-direction: row;
+        width: 100%;
+        height: max-content;
+        margin-right: 0;
+        justify-content: space-between;
+    }
+    header nav {
+        width: 75%;
+        align-self: center;
+    }
+    .nav-menu {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0;
+    }
+    .nav-menu__item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+    .nav-menu__icon {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    .twitter-info {
+        display: none;
+    }
+}
+
+@media only all and (max-width: 768px) {
+    .block {
+        width: calc(100vw - 100px);
+    }
+    .main-content {
+        width: 110%;
+    }
+    .nav-menu__icon {
+        display: none;
+    }
+    header {
+        width: 110%;
+    }
+    .banner__img {
+        padding-bottom: 0;
+    }
+    .banner__title {
+        opacity: 0.6;
+        width: inherit;
+    }
+    .banner__descr {
+        width: inherit;
+    }
+    .tabs {
+        display: none;
+    }
+    .card {
+        width: 48%;
+    }
+    .subscribe-form {
+        flex-direction: column;
+    }
+    .subscribe-form__descr {
+        width: 100%;
+        justify-self: center;
+    }
+    .subscribe-form__input {
+        width: 100%;
+    }
+    .subscribe-form__input input {
+        width: 70%;
+    }
+}
+
+@media only all and (max-width: 480px) {
+    header {
+        flex-direction: column-reverse;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+    }
+    header nav {
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+    }
+    /* .card__header img {
+        height: 80%;
+    } */
+}

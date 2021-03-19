@@ -1,0 +1,54 @@
+.mail-icon {
+    flex-shrink: 0;
+    margin-right: 3%;
+    width: 32px;
+    height: 26px;
+    background: no-repeat url('../icons/mail-icon.svg');
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px dashed #E5E5E5;
+    border-bottom: 1px dashed #E5E5E5;
+    margin: 3% 0;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    padding: 1%;
+}
+
+.subscribe-form__descr {
+    display: flex;
+    width: 70%;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.subscribe-form__input {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe-form__input button {
+    width: 80px;
+    height: 23px;
+    right: 18px;
+    top: 13px;
+    background: linear-gradient(180deg, #F4F3F3 0%, #BBB9B9 100%);
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.subscribe-form__input input {
+    width: 50%;
+    height: 22px;
+    padding-left: 6px;
+    border: 1px solid #E5E5E5;
+    margin-right: 18px;
+    color: #000000;
+}

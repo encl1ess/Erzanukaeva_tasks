@@ -1,0 +1,117 @@
+header {
+    display: flex;
+    flex-direction: column;
+    width: 12.7272%;
+    justify-content: center;
+    margin-right: 4%;
+}
+
+.logo {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    margin: 3% 0;
+    background-image: url(../icons/icon-logo.svg);
+}
+
+.nav-menu,
+.twitter-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-menu__item {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    font-style: italic;
+    color: #34ACA7;
+    margin-bottom: 40px;
+}
+
+.nav-menu__icon {
+    /* flex-shrink: 0; */
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+}
+
+.food {
+    background: center / cover no-repeat url('../icons/food-icon.svg');
+}
+
+.blog {
+    background: center / cover no-repeat url('../icons/blog-icon.svg');
+}
+
+.a-list {
+    background: center / cover no-repeat url('../icons/a-list-icon.svg');
+}
+
+.camera {
+    background: center / cover no-repeat url('../icons/camera-icon.svg');
+}
+
+.about {
+    background: center / cover no-repeat url('../icons/about-icon.svg');
+}
+
+.nav-menu__title {
+    align-self: center;
+}
+
+.nav-menu__item:hover {
+    background: #D9EFEC;
+}
+
+.twitter-info .join-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    color: #34ACA7;
+    font-style: italic;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.twitter-info .join-button:hover {
+    background: #D9EFEC;
+}
+
+.join-button .join-button__icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background: no-repeat url('../icons/twitter-icon-blue.svg');
+}
+
+.twitter-info img {
+    height: 13px;
+    width: 16px;
+    margin-right: 5px;
+}
+
+.tweet__title {
+    border-bottom: 1px dashed #E5E5E5;
+    padding: 5px 0;
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.tweet-text {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 19px;
+    color: #000;
+    padding-right: 5px;
+}
