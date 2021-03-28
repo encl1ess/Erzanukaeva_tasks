@@ -10,6 +10,10 @@ body {
     color: #34ACA7;
 }
 
+.link:hover {
+    color: #006db6;
+}
+
 ul {
     list-style: none;
     padding-left: 0;

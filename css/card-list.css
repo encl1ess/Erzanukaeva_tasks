@@ -17,13 +17,9 @@
     margin-bottom: 3%;
 }
 
-.card a:hover,
-.footer-menu li a:hover {
-    color: #006db6;
-}
-
 .card__header img {
     width: 100%;
+    height: 80%;
     outline: 11px solid #FFFFFF;
     outline-offset: -11px;
     border: 1px solid #E5E5E5;
