@@ -1,93 +1,86 @@
-        // JavaScript код будем писать здесь
-        let canvas = document.getElementById("myCanvas");
-        let ctx = canvas.getContext("2d");
-        let isOnGround = true;
-        let ballRadius = 25;
-        let blocks = [];
-        let dx = 4,
-            dy = 2,
-            gravity = 1.1;
+let keyPressed = {
+    right: false,
+    left: false
+}
+let isFalling = false;
 
-        let bouncePos = {
-            x: 50,
-            y: 150
+let goal = false;
+let dx = 3,
+    dy = -4;
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+document.addEventListener("mousemove", mouseMoveHandler, false);
+
+
+function keyDownHandler(e) {
+    if (e.keyCode == 39) {
+        keyPressed.right = true;
+    } else if (e.keyCode == 37) {
+        keyPressed.left = true;
+    }
+}
+
+function keyUpHandler(e) {
+    if (e.keyCode == 39) {
+        keyPressed.right = false;
+    } else if (e.keyCode == 37) {
+        keyPressed.left = false;
+    }
+}
+
+function mouseMoveHandler(e) {
+    let relativeX = e.clientX - canvas.offsetLeft;
+    let relativeY = e.clientY - canvas.offsetTop;
+    if (relativeX > 150 && relativeX < canvas.width - 150 && relativeY > canvas.height / 1.5 && relativeY < canvas.height - 100) {
+        ball.x = relativeX;
+        ball.y = relativeY;
+    }
+}
+
+function move() {
+
+
+    if (ball.y - ball.radius <= canvas.height / 1.5) {
+        if (!isFalling) {
+            ball.y += dy;
+            // ball.x += dx;
+            isFalling == false;
+            isFallCheck();
+
+        } else {
+            ball.y += gravity;
+            isFallCheck();
         }
+    }
+}
 
-        let keyPressed = {
-            up: false,
-            right: false,
-            left: false,
 
-        }
+function isFallCheck() {
+    if (ball.y - ball.radius <= 50) {
+        isFalling = true;
+    } else if (ball.y - ball.radius > canvas.height / 1.5) {
+        isFalling = false;
+        ball.y = canvas.height / 1.2;
+    }
 
-        function drawBall() {
-            ctx.beginPath();
-            ctx.arc(bouncePos.x, bouncePos.y, ballRadius, 0, Math.PI * 2);
-            ctx.fillStyle = "#FF4100";
-            ctx.fill();
-            ctx.closePath();
-        }
+}
 
-        // function drawBlock();
+function isGoalCheck() {
 
-        // function drawBlocks(blocks, ) {
+    if (isFalling) {
 
-        // }
-
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawBall();
-            if (isOnGround === false) {
-                bouncePos.y += gravity;
+        if (ball.x - ball.radius > cell.x - cell.radiusX && ball.x + ball.radius < cell.x + cell.radiusX && ball.y >= cell.y - 1 && ball.y <= cell.y + 1) {
+            if (score < 3) {
+                score++;
+            } else if (score >= 3) {
+                score += 2;
             }
-            move();
+            goal = true;
         }
-        let interval = setInterval(draw, 10);
-        document.addEventListener("keydown", keyDownHandler, false);
-        document.addEventListener("keyup", keyUpHandler, false);
-
-        function keyDownHandler(e) {
-
-            if (e.keyCode == 37) {
-                keyPressed.left = true;
-            } else if (e.keyCode == 38) {
-                keyPressed.up = true;
-            } else if (e.keyCode == 39) {
-                keyPressed.right = true;
-            }
+        if (goal === false && ball.y - ball.radius > cell.y + 30) {
+            alert("Game Over");
+            document.location.reload();
+            clearInterval(interval);
         }
-
-
-        function keyUpHandler(e) {
-
-            if (e.keyCode == 37) {
-                keyPressed.left = false;
-            } else if (e.keyCode == 38) {
-                keyPressed.up = false;
-            } else if (e.keyCode == 39) {
-                keyPressed.right = false;
-            }
-        }
-
-
-
-        function move() {
-            if (keyPressed.left) {
-                bouncePos.x -= dx;
-            } else if (keyPressed.right) {
-                bouncePos.x += dx;
-            }
-            if (keyPressed.up) {
-                if (isOnGround === true) {
-                    for (dy = 0; dy < 10; dy++)
-                        bouncePos.y -= dy;
-                    isOnGround = false;
-                }
-            } else if (bouncePos.y + dy > canvas.height - ballRadius) {
-                alert("GAME OVER");
-                document.location.reload();
-                clearInterval(interval); // Needed for Chrome to end game
-            }
-
-
-        }
+    } else goal = false;
+}

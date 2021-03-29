@@ -1,8 +1,11 @@
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
+let gravity = 2.5;
+
+
 let ball = {
     x: canvas.width / 2,
-    y: canvas.height / 1.45,
+    y: canvas.height / 1.2,
     radius: 35,
 }
 
@@ -15,7 +18,7 @@ let basket = {
 let cell = {
     x: canvas.width / 2,
     y: canvas.height / 2.8,
-    radiusX: 40,
+    radiusX: 46,
     radiusY: 6,
     rotation: Math.PI * 0,
     startAngle: 0,
@@ -69,9 +72,16 @@ let drawing = (function() {
             ctx.closePath();
         },
         drawScore: function() {
+
             ctx.font = "20px Arial";
             ctx.fillStyle = "#0095DD";
             ctx.fillText("Score: " + score, 10, 30);
+        },
+        draw2X: function() {
+            ctx.font = "40px Arial";
+            ctx.fillStyle = "#FFAf00";
+            ctx.fillText("2X", rect.x + rect.width / 5, rect.y + rect.height / 1.4);
+
         }
 
     }
@@ -80,11 +90,22 @@ let drawing = (function() {
 
 
 function draw() {
-    drawing.drawBall();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     drawing.drawBasket();
     drawing.drawRect();
     drawing.drawCell();
+    if (score >= 3) {
+        drawing.draw2X();
+    }
     drawing.drawScore();
+    drawing.drawBall();
+    move();
+
+    isGoalCheck();
+
+
 }
 
 let interval = setInterval(draw, 10);
+// checkCollision();
