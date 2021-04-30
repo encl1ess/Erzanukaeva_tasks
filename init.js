@@ -81,9 +81,16 @@ let drawing = (function() {
             ctx.font = "40px Arial";
             ctx.fillStyle = "#FFAf00";
             ctx.fillText("2X", rect.x + rect.width / 5, rect.y + rect.height / 1.4);
-
+        },
+        drawLine: function(startwidth, endwidth, height) {
+            ctx.beginPath();
+            ctx.moveTo(startwidth, height); // Move the pen to (30, 50)
+            ctx.lineTo(endwidth, height);
+            ctx.lineWidth = 60;
+            ctx.strokeStyle = 'green';
+            ctx.stroke();
+            ctx.closePath();
         }
-
     }
 
 })()
@@ -98,14 +105,19 @@ function draw() {
     if (score >= 3) {
         drawing.draw2X();
     }
+    if (score >= 1) {
+        moveBasketDir();
+    }
     drawing.drawScore();
+    // drawing.drawLine(50, canvas.width - 50, canvas.height / 1.5 + 40);
+
+
     drawing.drawBall();
     move();
-
     isGoalCheck();
 
 
 }
 
-let interval = setInterval(draw, 10);
+let interval = setInterval(draw, 7);
 // checkCollision();
